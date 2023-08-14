@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="output.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body class="bg-[#242742] font-Roboto">
+    <!-- Success message start -->
+
+    <!-- Thanks for subscribing! A confirmation email has been sent to
+    ash@loremcompany.com. Please open it and click the button inside to confirm
+    your subscription. Dismiss message -->
+
+    <!-- Success message end -->
+
+    <div class="container items-center flex">
+      <div
+        class="card lg:card-side bg-base-100 shadow-xl lg:items-center mx-auto lg:p-5 w-3/4"
+      >
+        <figure class="lg:order-2">
+          <img
+            src="/assets/images/illustration-sign-up-desktop.svg"
+            alt="Album"
+            class="hidden lg:block"
+          />
+          <img
+            src="/assets/images/illustration-sign-up-mobile.svg"
+            alt="Album"
+            class="block w-full lg:hidden"
+          />
+        </figure>
+        <div class="card-body gap-5 lg:order-1">
+          <h2 class="card-title text-4xl font-bold">Stay updated!</h2>
+          <p class="flex-grow-0">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <form class="form-control gap-2" method="post">
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked
+                name="product"
+                id="product"
+                class="checkbox checkbox-sm rounded-full flex justify-center items-center checked:bg-none checked:bg-[#ff6257] checked:after:content-['✓'] checked:text-white checked:text-center"
+              />
+              <label for="product">
+                Product discovery and building what matters
+              </label>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked
+                name="measuring"
+                id="measuring"
+                class="checkbox checkbox-sm rounded-full flex justify-center items-center checked:bg-none checked:bg-[#ff6257] checked:after:content-['✓'] checked:text-white checked:text-center"
+              />
+              <label for="measuring">
+                Measuring to ensure updates are a success
+              </label>
+            </div>
+            <div class="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked
+                name="muchmore"
+                id="muchmore"
+                class="checkbox checkbox-sm rounded-full flex justify-center items-center checked:bg-none checked:bg-[#ff6257] checked:after:content-['✓'] checked:text-white checked:text-center"
+              />
+              <label for="muchmore"> And much more! </label>
+            </div>
+            <div class="flex flex-wrap gap-y-2 items-center mt-5">
+              <label for="email" class="w-1/2 order-1"> Email address </label>
+              <input
+                type="email"
+                placeholder="email@company.com"
+                id="email"
+                class="input input-bordered w-full invalid:outline-[#ff6257] invalid:bg-[#ff6257]/20 invalid:outline-offset-0 focus:border-none peer/invalidEmail invalid:text-[#ff6257] order-3"
+              />
+              <span
+                class="text-[#ff6257] font-bold text-sm w-1/2 text-end hidden peer-invalid/invalidEmail:block order-2"
+                >Valid email required</span
+              >
+            </div>
+            <button
+              type="submit"
+              class="btn btn-neutral mt-5"
+              onclick="handleSubs()"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-base-100 text-center mt-5">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        class="text-[#ff6257]"
+        >Frontend Mentor</a
+      >. Coded with ❤️ by
+      <a
+        href="https://github.com/aldiipratama"
+        target="_blank"
+        class="text-[#ff6257]"
+        >Aldi Pratama</a
+      >.
+    </div>
+
+    <script>
+      const handleSubs = () => {
+        const email = document.getElementById("email");
+        // email.setAttribute("required", "");
+        email.value
+          ? (location.href = "successState.html")
+          : email.setAttribute("required", "");
+      };
+    </script>
+  </body>
+</html>
